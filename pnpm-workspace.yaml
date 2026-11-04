@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+  - examples/*
+minimumReleaseAgeExclude:
+  - lucide@1.68.0
+  - '@lucide/vue@1.68.0'

@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.rdt-root {
+  font-family: var(--rdt-font);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--rdt-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.rdt-icon {
+  flex: none;
+  display: block;
+}
+
+::selection {
+  background: var(--rdt-accent-soft);
+}
+
+/* 滚动条：不抢页面视觉 */
+.rdt-scroll {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rdt-border-strong) transparent;
+}
+
+.rdt-scroll::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+.rdt-scroll::-webkit-scrollbar-thumb {
+  background: var(--rdt-border-strong);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 8px;
+}
+
+.rdt-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.rdt-mono {
+  font-family: var(--rdt-mono);
+  font-variant-ligatures: none;
+}
+
+.rdt-muted {
+  color: var(--rdt-dim);
+}
+
+.rdt-faint {
+  color: var(--rdt-faint);
+}
+
+.rdt-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rdt-root *,
+  .rdt-root *::before,
+  .rdt-root *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "rinova-devtools-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @rinova/devtools-playground dev",
+    "build": "pnpm --filter @rinova/devtools build && pnpm --filter @rinova/devtools-vue build",
+    "build:core": "pnpm --filter @rinova/devtools build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:coverage": "pnpm --filter @rinova/devtools test:coverage",
+    "test:isolation": "node scripts/check-prod-isolation.mjs",
+    "verify": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "5.9.3",
+    "vite": "8.3.5"
+  }
+}
